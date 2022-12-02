@@ -1,32 +1,133 @@
 insert into Clientes(ID, Nome)
 values
-('Adalberto Martins da Silva')
-('Adan Roger Guimarães Dias')
-('Adão Walter Gomes de Sousa')
-('Adelson Fernandes Sena')
-('Ademir Augusto Simões')
-('Ademir Borges dos Santos')
-('Adilio José da Silva Santos')
-('Adriana Ferreira de Lima Teodoro')
-('Adriano Bezerra Apolinario')
-('Adriano Heleno Basso')
-('Adriano Lourenço do Rego')
-('Adriano Matos Santos')
-('Adriano Pires Caetano')
-('Adriano Prada de Campos')
-('Adriel Alberto dos Santos')
-('Agner Vinicius Marques de Camargo')
-('Agrinaldo Ferreira Soares')
-('Alan Jhonnes Banlian da Silva e Sá')
-('Alberto Ramos Rodrigues')
-('Alcides José Ramos')
-('Aldemir SantAna dos Santos')
-('Aleksandro Marcelo da Silva')
-('Alessandro Martins Silva')
-('Alessandro Sanches')
-('Alex dos Reis de Jesus')
-('Alex Ferreira Soares')
-('Alex Sandro Oliveira')
-('Alex Souza Farias')
-('Alexandra de Lima Silva')
+('Adalberto Martins da Silva'),
+('Adan Roger Guimarães Dias'),
+('Adão Walter Gomes de Sousa'),
+('Adelson Fernandes Sena'),
+('Ademir Augusto Simões'),
+('Ademir Borges dos Santos'),
+('Adilio José da Silva Santos'),
+('Adriana Ferreira de Lima Teodoro'),
+('Adriano Bezerra Apolinario'),
+('Adriano Heleno Basso'),
+('Adriano Lourenço do Rego'),
+('Adriano Matos Santos'),
+('Adriano Pires Caetano'),
+('Adriano Prada de Campos'),
+('Adriel Alberto dos Santos'),
+('Agner Vinicius Marques de Camargo'),
+('Agrinaldo Ferreira Soares'),
+('Alan Jhonnes Banlian da Silva e Sá'),
+('Alberto Ramos Rodrigues'),
+('Alcides José Ramos'),
+('Aldemir SantAna dos Santos'),
+('Aleksandro Marcelo da Silva'),
+('Alessandro Martins Silva'),
+('Alessandro Sanches'),
+('Alex dos Reis de Jesus'),
+('Alex Ferreira Soares'),
+('Alex Sandro Oliveira'),
+('Alex Souza Farias'),
+('Alexandra de Lima Silva'),
 ('Alexandre Clemente da Costa')
+
+go
+
+insert into Concessionarias(Nome)
+values
+('Atena concessionária'),
+('Demétir concessionária'),
+('Hera concessionária'),
+('Estia concessionária'),
+('Perséfone concessionária')
+
+GO
+
+insert into Automoveis(Modelo,Preco)
+values
+
+('Fiat Strada', 43115),
+('Fiat Argo', 47660),
+('Fiat Mobi', 32102),
+('Jeep Compass', 34950),
+('Hyundai HB20', 49302),
+('Jeep Renegade', 36661),
+('Volkswagen T-Cross', 38182),
+('Fiat Toro', 57733),
+('Hyundai Creta', 55998),
+('Chevrolet S10', 51035),
+('Toyota Corolla Cross', 34544),
+('Toyota Hilux', 53937),
+('Toyota Corolla', 55022),
+('Volkswagen Gol', 48253),
+('Honda HR-V', 53438),
+('Renault Kwid', 31810),
+('Volkswagen Nivus', 35104),
+('Hyundai HB20S', 31855),
+('Ford Ranger', 48927),
+('Fiat Uno', 38111),
+('Fiat Cronos', 36515),
+('Citroën C4 Cactus', 53654),
+('Toyota Yaris Hatchback', 55869),
+('Volkswagen Voyage', 30954),
+('Honda Civic', 30871),
+('Volkswagen Saveiro', 32306),
+('Caoa Chery Tiggo 5x', 30069),
+('Volkswagen Virtus', 40689),
+('Fiat Grand Siena', 33469),
+('Caoa Chery Tiggo 8', 48481),
+('Chevrolet Tracker', 30648),
+('Peugeot 208', 46934),
+('Toyota SW4', 54252),
+('Nissan Frontier', 32596),
+('Honda WR-V', 35139),
+('Volkswagen Taos', 47546),
+('Mitsubishi L200', 57049),
+('Renault Oroch', 48756),
+('Toyota Yaris Sedan', 43077),
+('Renault Duster', 52641)
+
+GO
+
+insert into Alocacao (Area, AutomovelID, ConcessionariaID, Quantidade)
+values
+(1,1,1,8),
+(2,2,2,1),
+(4,3,3,4),
+(7,4,4,6),
+(8,5,5,4),
+(9,6,1,4),
+(10,7,2,1),
+(1,8,2,7),
+(2,9,3,2),
+(4,10,4,6),
+(7,11,5,3),
+(8,12,1,9),
+(9,13,2,9),
+(10,14,3,6),
+(1,15,3,4),
+(2,16,4,1),
+(4,17,5,8),
+(7,18,1,4),
+(8,19,2,10),
+(9,20,3,10),
+(10,21,4,7),
+(1,22,4,3),
+(2,23,5,5),
+(4,24,1,4),
+(7,25,2,3),
+(8,26,3,3),
+(9,27,4,10),
+(10,28,5,4),
+(1,29,1,2),
+(2,30,2,3),
+(4,31,3,4),
+(7,32,4,2),
+(8,33,5,3),
+(9,34,1,4),
+(10,35,2,3),
+(1,36,3,2),
+(2,37,4,3),
+(4,38,5,3),
+(7,39,1,2),
+(8,40,2,1)
