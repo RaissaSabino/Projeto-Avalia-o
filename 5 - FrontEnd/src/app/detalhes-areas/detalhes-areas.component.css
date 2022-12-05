@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+}
+
+.detalhes{
+    margin-top: 50px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 30px;
+}
+
+.detalhes-product{
+    display: flex;
+    gap: 30px;
+    border: 3px solid #7814FF;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.193);
+    width: 60vw;
+    padding: 25px;
+    background-color: #fff;
+}
+
+.detalhes-product:hover{
+    cursor: pointer;
+    transition: 1s;
+    transform: scale(1.05);
+}
+
+
+.title{
+    position: relative;
+    font-size: 38px;
+    color: #7814FF;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.modelo{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    text-decoration: none;
+    color: #707070;
+}
+
+.preco{
+    position: inherit;
+    margin-left: 200px;
+}
+
+#linha{
+    height: 20px;
+    border-right: 1px solid #7814FF;
+}
