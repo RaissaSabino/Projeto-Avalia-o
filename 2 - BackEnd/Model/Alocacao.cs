@@ -1,4 +1,5 @@
 namespace Model;
+using System.Linq;
 
 public class Alocacao
 {
@@ -9,11 +10,17 @@ public class Alocacao
     public int Quantidade { get; set; }
 
 
-    public static List<int> GetAllArea()
+    public static IEnumerable<object> GetAllArea()
     {
         using(var context = new Context())
         {
-            var Areas = context.Alocacao.Select(q => q.Area).Distinct().ToList();
+            var Areas = context.Alocacao.GroupBy(q => q.Area)
+                .Select(cl => new 
+                {
+                    Quantidade = cl.Sum(a => a.Quantidade),
+                    Area = cl.First().Area
+                })
+                .ToList();
             return Areas;
         }
     }

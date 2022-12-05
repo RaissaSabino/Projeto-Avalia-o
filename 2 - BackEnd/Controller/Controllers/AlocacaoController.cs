@@ -12,9 +12,9 @@ public class AlocacaoController: ControllerBase
 
     [HttpGet]
     [Route("GetAll")]
-    public List<int> GetAll()
+    public List<object> GetAll()
     {
-        return Alocacao.GetAllArea();
+        return Alocacao.GetAllArea().ToList();
     }
 
     [HttpGet]
