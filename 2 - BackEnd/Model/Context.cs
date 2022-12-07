@@ -16,7 +16,7 @@ public class Context: DbContext
         if(!optionsBuilder.IsConfigured)
         {
             var servername = Environment.MachineName;
-            optionsBuilder.UseSqlServer($"Data Source={servername}\\SQLEXPRESS;Initial Catalog=SAEP; Integrated Security=True;Encrypt=false;TrustServerCertificate=true");
+            optionsBuilder.UseSqlServer($"Data Source={servername};Initial Catalog=SAEP; Integrated Security=True;Encrypt=false;TrustServerCertificate=true");
         }
     }
 

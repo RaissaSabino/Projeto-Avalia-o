@@ -1,4 +1,4 @@
-insert into Clientes(ID, Nome)
+insert into Clientes(Nome)
 values
 ('Adalberto Martins da Silva'),
 ('Adan Roger Guimarães Dias'),

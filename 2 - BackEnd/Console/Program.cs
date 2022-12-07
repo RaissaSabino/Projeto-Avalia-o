@@ -1,9 +1,9 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using Model;
 
-// using (var context = new Context()){
-//     context.Database.EnsureCreated();
-// }
+using (var context = new Context()){
+    context.Database.EnsureCreated();
+}
 
 //var lista = Alocacao.GetAllArea();
 //foreach(var teste in lista)
@@ -27,9 +27,9 @@ using Model;
 //    Console.WriteLine(item.ID);
 //}
 
-var teste = Alocacao.SellCar(1, 1, 1);
+// var teste = Alocacao.SellCar(1, 1, 1);
 
-Console.WriteLine(teste);
+// Console.WriteLine(teste);
 
 
 
