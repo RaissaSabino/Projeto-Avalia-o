@@ -18,7 +18,7 @@ public class Alocacao
                 .Select(cl => new 
                 {
                     Quantidade = cl.Sum(a => a.Quantidade),
-                    Area = cl.First().Area
+                    ID = cl.First().Area 
                 })
                 .ToList();
             return Areas;

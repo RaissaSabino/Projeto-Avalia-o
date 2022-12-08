@@ -24,7 +24,7 @@ public class AlocacaoController: ControllerBase
         return Alocacao.GetAllCarsAvaiable(AreaID);
     }
 
-    [HttpGet]
+    [HttpPost]
     [Route("GetAvaibleConcessionariaWithSpecificCarAndArea")]
     public List<Concessionarias> GetAvaibleConcessionariaWithSpecificCarAndArea([FromBody] Alocacao alocacao)
     {

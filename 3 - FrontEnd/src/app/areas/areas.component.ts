@@ -8,21 +8,26 @@ import axios from "axios";
 })
 export class AreasComponent
 {
+
+  areas: [Area]  | undefined;
+
   constructor() {
-    this.login();
+    this.GetAllAreas();
    }
 
-  login ()
+   GetAllAreas()
   {
     var config = {
       method: 'get',
-      url: 'https://localhost:7060/Alocacao/GetAll',
+      url: 'http://localhost:5184/Alocacao/GetAll',
       headers: {}
     };
-  
+    
+    let instance = this;
     axios(config)
       .then(function (response) {
-        console.log(JSON.stringify(response.data));
+        instance.areas = response.data
+        console.log(instance.areas)
       })
       .catch(function (error) {
         console.log(error);
@@ -30,4 +35,11 @@ export class AreasComponent
   }
   
 
+}
+
+
+interface Area
+{
+  id: number;
+  quantidade: number;
 }

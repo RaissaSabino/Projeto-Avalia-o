@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ElementRef, ViewChild } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-venda-automovel',
   templateUrl: './venda-automovel.component.html',
@@ -12,17 +13,22 @@ import { ElementRef, ViewChild } from '@angular/core';
 export class VendaAutomovelComponent implements OnInit {
   clientes: [Cliente] | undefined;
   concessionarias: [Concessionaria] | undefined;
-  area = 10;
-  automovel = 7;
+  areaID = 10;
+  automovelID = 7;
   selectedClient = "";
   selectedConcessionaria = "";
 
-  constructor() {
+  constructor(private route : ActivatedRoute) {
     this.getAllClients();
     this.loadAvaiableConcessionaria();
   }
 
   ngOnInit(): void {
+    const routeParams = this.route.snapshot.paramMap;
+    this.areaID = Number(routeParams.get("areaID"))
+
+    this.automovelID = Number(routeParams.get("automovelID"))
+
 
   }
 
@@ -44,9 +50,9 @@ export class VendaAutomovelComponent implements OnInit {
 
   loadAvaiableConcessionaria() {
     var data = JSON.stringify({
-      "area": this.area,
+      "area": this.areaID,
       "automovel": {
-        "id": this.automovel,
+        "id": this.automovelID,
         "modelo": "",
         "preco": 0
       },
@@ -92,7 +98,7 @@ export class VendaAutomovelComponent implements OnInit {
     });
     
     var config = {
-      method: 'post',
+      method: 'put',
       url: 'http://localhost:5184/Alocacao/SellCar',
       headers: { 
         'Content-Type': 'application/json'

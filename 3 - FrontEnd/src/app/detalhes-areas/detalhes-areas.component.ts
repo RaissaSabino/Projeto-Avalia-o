@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import axios from 'axios';
+import { ActivatedRoute } from '@angular/router'
 
 @Component({
   selector: 'app-detalhes-areas',
@@ -7,14 +8,17 @@ import axios from 'axios';
   styleUrls: ['./detalhes-areas.component.css']
 })
 export class DetalhesAreasComponent {
-  areaID = 10;
+  areaID = 0;
   cars:[Automovel] | undefined
 
-  constructor(){
+  constructor(private route: ActivatedRoute){
     
   }
 
   ngOnInit(){
+    
+    const routeParams = this.route.snapshot.paramMap;
+    this.areaID = Number(routeParams.get("areaID"))
     this.getAreaInfo()
   }
   
