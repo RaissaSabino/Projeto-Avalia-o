@@ -3,7 +3,7 @@
             <h1>XXZ</h1>  
 
             <div class="input-box">
-                <select class="form-select" aria-label="Default select example" >
+                <select [(ngModel)]="selectedClient" class="form-select" aria-label="Default select example">
                     <option selected>Cliente</option>
                     <option *ngFor="let cliente of clientes" value="cliente.id">{{cliente.nome}}</option>
                   </select>
@@ -16,7 +16,7 @@
             </div>
 
             <div> 
-                <button>Confirmar venda</button>
+                <button (click)="MakeASell()">Confirmar venda</button>
             </div>           
     </div>
 </div>

@@ -7,6 +7,7 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { AreasComponent } from './areas/areas.component';
 import { DetalhesAreasComponent } from './detalhes-areas/detalhes-areas.component';
 import { VendaAutomovelComponent } from './venda-automovel/venda-automovel.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { VendaAutomovelComponent } from './venda-automovel/venda-automovel.compo
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     RouterModule.forRoot([
       {path: '', component: AreasComponent},
