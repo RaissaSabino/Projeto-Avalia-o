@@ -2,17 +2,16 @@
 <div class="detalhes">
     <div class="detalhes-product" *ngFor="let car of cars">
         <ng-container>
-            <!-- <div [routerLink]="['/product', product.id]"> -->
-            <!-- <div [routerLink]=""> -->
-            <label class="modelo">Modelo: </label>
-            <a [title]="'product.name'">
-                {{car.modelo}}
-            </a>
-            <label class="modelo preco">Preço: </label>
-            <a [title]="'product.name'">
-                {{ car.preco | currency }}
-            </a>
-            <!-- </div>   -->
+            <div [routerLink]="['/detalhes', areaID, car.id]">
+                <label class="modelo">Modelo: </label>
+                <a>
+                    {{car.modelo}}
+                </a>
+                <label class="modelo preco">Preço: </label>
+                <a>
+                    {{ car.preco | currency }}
+                </a>
+            </div> 
         </ng-container>
     </div>
 </div>

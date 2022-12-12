@@ -13,10 +13,13 @@ import { ActivatedRoute } from '@angular/router';
 export class VendaAutomovelComponent implements OnInit {
   clientes: [Cliente] | undefined;
   concessionarias: [Concessionaria] | undefined;
+  cars:Automovel | undefined
   areaID = 10;
   automovelID = 7;
+  automovelModelo = "";
   selectedClient = "";
   selectedConcessionaria = "";
+
 
   constructor(private route : ActivatedRoute) {
     this.getAllClients();
@@ -28,7 +31,6 @@ export class VendaAutomovelComponent implements OnInit {
     this.areaID = Number(routeParams.get("areaID"))
 
     this.automovelID = Number(routeParams.get("automovelID"))
-
 
   }
 
@@ -126,4 +128,9 @@ interface Cliente {
 interface Concessionaria {
   id: number;
   nome: string;
+}
+interface Automovel{
+  id: number;
+  modelo: string;
+  preco: number;
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import axios from "axios";
+import { ActivatedRoute } from '@angular/router'
 
 @Component({
   selector: 'app-areas',
@@ -8,12 +9,18 @@ import axios from "axios";
 })
 export class AreasComponent
 {
-
+  areaID = 0;
   areas: [Area]  | undefined;
 
-  constructor() {
+  constructor(private route: ActivatedRoute){
+    
+  }
+  ngOnInit(){
+    
+    const routeParams = this.route.snapshot.paramMap;
+    this.areaID = Number(routeParams.get("areaID"))
     this.GetAllAreas();
-   }
+  }
 
    GetAllAreas()
   {

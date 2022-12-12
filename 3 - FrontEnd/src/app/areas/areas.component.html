@@ -1,9 +1,11 @@
 <div class="container">
     <div class="area-container" *ngFor="let area of areas">
+        <div [routerLink]="['/detalhes', area.id]">
         <span>
             <p>{{area.quantidade}}</p>
             <p>{{area.id}}</p>
 
         </span>
+         </div>
     </div>
 </div>

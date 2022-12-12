@@ -9,6 +9,7 @@ import { ActivatedRoute } from '@angular/router'
 })
 export class DetalhesAreasComponent {
   areaID = 0;
+  automovelID = 0;
   cars:[Automovel] | undefined
 
   constructor(private route: ActivatedRoute){
@@ -19,6 +20,7 @@ export class DetalhesAreasComponent {
     
     const routeParams = this.route.snapshot.paramMap;
     this.areaID = Number(routeParams.get("areaID"))
+    this.automovelID = Number(routeParams.get("automovelID"))
     this.getAreaInfo()
   }
   
