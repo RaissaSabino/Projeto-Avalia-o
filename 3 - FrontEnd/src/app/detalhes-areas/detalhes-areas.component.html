@@ -2,7 +2,7 @@
 <div class="detalhes">
     <div class="detalhes-product" *ngFor="let car of cars">
         <ng-container>
-            <div [routerLink]="['/detalhes', areaID, car.id]">
+            <div [routerLink]="['/venda', areaID, car.id]">
                 <label class="modelo">Modelo: </label>
                 <a>
                     {{car.modelo}}

@@ -13,7 +13,7 @@ import { ActivatedRoute } from '@angular/router';
 export class VendaAutomovelComponent implements OnInit {
   clientes: [Cliente] | undefined;
   concessionarias: [Concessionaria] | undefined;
-  cars:Automovel | undefined
+  car? :Automovel | undefined
   areaID = 10;
   automovelID = 7;
   automovelModelo = "";
@@ -24,6 +24,7 @@ export class VendaAutomovelComponent implements OnInit {
   constructor(private route : ActivatedRoute) {
     this.getAllClients();
     this.loadAvaiableConcessionaria();
+    
   }
 
   ngOnInit(): void {
@@ -31,6 +32,7 @@ export class VendaAutomovelComponent implements OnInit {
     this.areaID = Number(routeParams.get("areaID"))
 
     this.automovelID = Number(routeParams.get("automovelID"))
+    this.getCar();
 
   }
 
@@ -117,6 +119,24 @@ export class VendaAutomovelComponent implements OnInit {
     });
     
   }
+
+  getCar(){
+    var config = {
+      method: 'get',
+      url: 'http://localhost:5184/Automovel/Get/' + this.automovelID,
+      headers: {}
+    };
+    
+    let instance = this;
+    axios(config)
+      .then(function (response) {
+        instance.car = response.data
+        console.log(instance.car)
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
 }
 
 
@@ -130,7 +150,7 @@ interface Concessionaria {
   nome: string;
 }
 interface Automovel{
-  id: number;
-  modelo: string;
-  preco: number;
+  id?: number;
+  modelo?: string;
+  preco?: number;
 }

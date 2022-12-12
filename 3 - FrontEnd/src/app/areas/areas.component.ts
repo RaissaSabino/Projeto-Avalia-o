@@ -39,9 +39,7 @@ export class AreasComponent
       .catch(function (error) {
         console.log(error);
       });
-  }
-  
-
+  } 
 }
 
 

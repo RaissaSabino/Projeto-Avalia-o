@@ -6,8 +6,8 @@ import { VendaAutomovelComponent } from './venda-automovel/venda-automovel.compo
 
 const routes: Routes = [
   {path: '', component: AreasComponent},
-  {path: 'detalhes/areaID', component: DetalhesAreasComponent},
-  {path: 'venda/automovelID', component: VendaAutomovelComponent}
+  {path: 'detalhes/:areaID', component: DetalhesAreasComponent},
+  {path: 'venda/:areaID/:automovelID', component: VendaAutomovelComponent}
 ];
 
 @NgModule({

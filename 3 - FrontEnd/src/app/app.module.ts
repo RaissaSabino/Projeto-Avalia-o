@@ -24,7 +24,7 @@ import { FormsModule } from '@angular/forms';
     RouterModule.forRoot([
       {path: '', component: AreasComponent},
       {path: 'detalhes/:areaID', component: DetalhesAreasComponent},
-      {path: 'detalhes/:areaID/:automovelID', component: VendaAutomovelComponent}
+      {path: 'venda/:areaID/:automovelID', component: VendaAutomovelComponent}
     ]),
   ],
   providers: [],
